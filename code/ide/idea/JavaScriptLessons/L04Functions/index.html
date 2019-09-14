@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function max(a,b) {
+            return a>b?a:b;
+        }
+
+        console.log(max(2,3));
+
+        var func=max;
+        console.log(func(5,6));
+
+        function max1(){
+            console.log(arguments);  //arguments获取了传入的参数（即使在定义函数时没有定义参数也能传）
+        }
+
+        max1(1,2,"hello");
+
+        function max2(){
+            var maxvalue=arguments[0];
+
+            for(var i=1; i<arguments.length; i++){
+                maxvalue=max(maxvalue, arguments[i]);
+            }
+
+            return maxvalue;
+        }
+
+
+        console.log(max2(1, 2, 100, 0, -1, -200));
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
